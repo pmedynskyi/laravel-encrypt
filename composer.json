@@ -1,0 +1,18 @@
+{
+  "name": "pmedynskyi/laravel-encrypt",
+  "autoload": {
+    "psr-4": {
+      "Pmedynskyi\\LaravelEncrypt\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Pavlo Medynskyi",
+      "email": "pmedynskyi@technoji.io"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "laravel/framework": "^8.79.0"
+  }
+}
