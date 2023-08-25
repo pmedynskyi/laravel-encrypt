@@ -11,9 +11,9 @@ class EncryptionService
     private const DEFAULT_LENGTH = 16;
     private const ALGO = 'sha256';
 
-    public static function hash(string $string, bool $encrypt = true): string
+    public static function hash(string $string, bool $encrypt = true, string $secretKey = self::DEFAULT_KEY, string $iv = self::DEFAULT_KEY)): string
     {
-        return $encrypt ? self::encrypt($string) : self::decrypt($string);
+        return $encrypt ? self::encrypt($string, $secretKey, $iv) : self::decrypt($string, $secretKey, $iv);
     }
 
     public static function decrypt(string $string, string $secretKey = self::DEFAULT_KEY, string $iv = self::DEFAULT_KEY): string
