@@ -15,5 +15,5 @@
     "php": "^8.0",
     "laravel/framework": "^8.79.0"
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "dev"
 }
