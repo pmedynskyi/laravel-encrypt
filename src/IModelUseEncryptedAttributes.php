@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Pmedynskyi\LaravelEncrypt;
 
-interface IModelUseEncryptedAttribute
+interface IModelUseEncryptedAttributes
 {
     public function encryptedAttribute(): Attribute;
 }
