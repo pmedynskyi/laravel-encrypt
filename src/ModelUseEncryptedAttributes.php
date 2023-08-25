@@ -3,14 +3,37 @@ declare(strict_types=1);
 
 namespace Pmedynskyi\LaravelEncrypt;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
 trait ModelUseEncryptedAttributes
 {
-    public function encryptedAttribute(): ModelAttribute
+    protected ?string $secretKey = null;
+    protected ?string $iv = null;
+
+    public function encryptedAttribute(): Attribute
     {
-        return ModelAttribute::make(
-            get: fn($value) => EncryptionService::decrypt($value, config('app.key'), config('app.name')),
-            set: fn($value) => EncryptionService::encrypt($value, config('app.key'), config('app.name'))
+        return Attribute::make(
+            get: fn($value) => EncryptionService::decrypt($value, $this->getSecretKey(), $this->getIv()),
+            set: fn($value) => EncryptionService::encrypt($value, $this->getSecretKey(), $this->getIv())
         );
+    }
+
+    protected function getSecretKey(): string
+    {
+        if (is_null($this->secretKey)) {
+            $this->secretKey = config('app.key');
+        }
+
+        return $this->secretKey;
+    }
+
+    protected function getIv(): string
+    {
+        if (is_null($this->iv)) {
+            $this->iv = config('app.name');
+        }
+
+        return $this->iv;
     }
 }
 
