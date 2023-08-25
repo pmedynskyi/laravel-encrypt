@@ -4,6 +4,8 @@
 
 - Example for Model:
 ```
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
 ...implements ...IModelUseEncryptedAttributes{
 use ModelUseEncryptedAttributes;
 ...
