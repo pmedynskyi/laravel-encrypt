@@ -5,6 +5,6 @@ namespace Pmedynskyi\LaravelEncrypt;
 
 interface IModelUseEncryptedAttributes
 {
-    public function encryptedAttribute(): Attribute;
+    public function encryptedAttribute(): ModelAttribute;
 }
 
