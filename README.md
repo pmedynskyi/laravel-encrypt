@@ -4,16 +4,15 @@
 
 - Example for Model:
 ```
-use Pmedynskyi\LaravelEncrypt\ModelAttribute;
 ...implements ...IModelUseEncryptedAttributes{
 use ModelUseEncryptedAttributes;
 ...
-    public function attributeOne() :ModelAttribute
+    public function attributeOne() :Attribute
     {
         return $this->encryptedAttribute();
     }
 ...
-    public function attributeTwo() :ModelAttribute
+    public function attributeTwo() :Attribute
     {
         return $this->encryptedAttribute();
     }
