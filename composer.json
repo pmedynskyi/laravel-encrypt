@@ -15,5 +15,5 @@
     "php": "^8.0",
     "ext-openssl": "*"
   },
-  "minimum-stability": "dev-master"
+  "minimum-stability": "dev-main"
 }
