@@ -21,7 +21,7 @@ trait ModelUseEncryptedAttributes
     protected function getSecretKey(): string
     {
         if (is_null($this->secretKey)) {
-            $this->secretKey = config('app.key');
+            $this->secretKey = config('app.secret_key');
         }
 
         return $this->secretKey;
@@ -30,7 +30,7 @@ trait ModelUseEncryptedAttributes
     protected function getIv(): string
     {
         if (is_null($this->iv)) {
-            $this->iv = config('app.name');
+            $this->iv = config('app.iv');
         }
 
         return $this->iv;
