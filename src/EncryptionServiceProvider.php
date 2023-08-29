@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Providers;
+namespace Pmedynskyi\LaravelEncrypt;
+
+use Illuminate\Support\ServiceProvider;
 
 class EncryptionServiceProvider extends ServiceProvider
 {
