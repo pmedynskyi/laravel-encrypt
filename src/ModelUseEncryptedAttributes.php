@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Pmedynskyi\LaravelEncrypt;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Facades\Config;
 
 trait ModelUseEncryptedAttributes
 {
@@ -21,7 +22,7 @@ trait ModelUseEncryptedAttributes
     protected function getSecretKey(): string
     {
         if (is_null($this->secretKey)) {
-            $this->secretKey = config('encrypt.secret_key');
+            $this->secretKey = Config::get('encrypt.secret_key');
         }
 
         return $this->secretKey;
@@ -30,7 +31,7 @@ trait ModelUseEncryptedAttributes
     protected function getIv(): string
     {
         if (is_null($this->iv)) {
-            $this->iv = config('encrypt.iv');
+            $this->iv = Config::get('encrypt.iv');
         }
 
         return $this->iv;
